@@ -12,70 +12,76 @@
 
 #include "../includes/printf.h"
 
-int	ft_ncounter1(int n, int i, va_list arg, const char *s)
+int	ft_ncounter1(int i, va_list arg, const char *s)
 {
 	char	*counter;
+	int		n1;
 
+	n1 = 0;
 	counter = "";
 	if (s[i] == 'd' || s[i] == 'i')
 	{
 		counter = ft_itoa_base(va_arg(arg, int), 10);
 		ft_putstr(counter);
-		n += ft_strlen(counter);
+		n1 += ft_strlen(counter);
 	}
 	if (s[i] == 'p')
 	{
 		ft_putstr("0x");
 		counter = ft_itoa_base(va_arg(arg, unsigned long long), 16);
 		ft_putstr(counter);
-		n += ft_strlen(counter);
+		n1 += 2 + ft_strlen(counter);
 	}
-	return (n);
+	return (n1);
 }
 
-int	ft_ncounter2(int n, int i, va_list arg, const char *s)
+int	ft_ncounter2(int i, va_list arg, const char *s)
 {
 	char	*counter;
+	int		n1;
 
+	n1 = 0;
 	counter = "";
 	if (s[i] == 'o')
 	{
 		counter = ft_itoa_base(va_arg(arg, unsigned int), 8);
 		ft_putstr(counter);
-		n += ft_strlen(counter);
+		n1 += ft_strlen(counter);
 	}
 	if (s[i] == 'u')
 	{
 		counter = ft_itoa_base(va_arg(arg, unsigned int), 10);
 		ft_putstr(counter);
-		n += ft_strlen(counter);
+		n1 += ft_strlen(counter);
 	}
 	if (s[i] == 'x')
 	{
 		counter = ft_itoa_base(va_arg(arg, unsigned int), 16);
 		ft_putstr(counter);
-		n += ft_strlen(counter);
+		n1 += ft_strlen(counter);
 	}
-	return (n);
+	return (n1);
 }
 
-int	ft_ncounter(int n, int i, va_list arg, const char *s)
+int	ft_ncounter(int i, va_list arg, const char *s)
 {
 	char	*counter;
+	int		n1;
 
+	n1 = 0;
 	counter = "";
 	if (s[i] == 's')
 	{
 		counter = (va_arg(arg, char*));
 		ft_putstr(counter);
-		n += ft_strlen(counter);
+		n1 += ft_strlen(counter);
 	}
 	if (s[i] == 'c')
 	{
 		ft_putchar(va_arg(arg, int));
-		n++;
+		n1++;
 	}
-	n += ft_ncounter1(n, i, arg, s);
-	n += ft_ncounter2(n, i, arg, s);
-	return (n);
+	n1 += ft_ncounter1(i, arg, s);
+	n1 += ft_ncounter2(i, arg, s);
+	return (n1);
 }
