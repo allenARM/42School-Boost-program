@@ -6,7 +6,7 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 13:54:24 by amelikia          #+#    #+#             */
-/*   Updated: 2018/09/15 14:35:53 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/09/15 14:38:37 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdlib.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
