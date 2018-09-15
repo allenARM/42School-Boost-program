@@ -2,7 +2,7 @@ NAME = printf.a
 CFLAGS = -Wall -Werror -Wextra
 HEADER = includes/printf.h
 
-CFILES = src/ft_itoa_base.c src/ft_printf.c src/ft_printfhelper.c src/ft_smallfn.c
+CFILES = src/ft_itoa_base.c src/b_printf.c src/ft_printfhelper.c src/ft_smallfn.c
 OFILES = *.o
 
 all: $(NAME)
