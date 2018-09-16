@@ -1,4 +1,4 @@
-NAME = printf.a
+NAME = libftprintf.a
 CFLAGS = -Wall -Werror -Wextra
 HEADER = includes/printf.h
 
