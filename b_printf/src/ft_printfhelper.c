@@ -6,7 +6,7 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 13:52:14 by amelikia          #+#    #+#             */
-/*   Updated: 2018/09/15 13:59:47 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/09/16 14:05:02 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,19 @@ int	ft_ncounter2(int i, va_list arg, const char *s)
 	return (n1);
 }
 
+int	ft_ncounter3(int i, const char *s)
+{
+	int		n1;
+
+	n1 = 0;
+	if (s[i] == '%')
+	{
+		ft_putchar('%');
+		n1++;
+	}
+	return (n1);
+}
+
 int	ft_ncounter(int i, va_list arg, const char *s)
 {
 	char	*counter;
@@ -83,5 +96,6 @@ int	ft_ncounter(int i, va_list arg, const char *s)
 	}
 	n1 += ft_ncounter1(i, arg, s);
 	n1 += ft_ncounter2(i, arg, s);
+	n1 += ft_ncounter3(i, s);
 	return (n1);
 }

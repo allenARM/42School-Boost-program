@@ -6,7 +6,7 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 13:54:24 by amelikia          #+#    #+#             */
-/*   Updated: 2018/09/15 15:44:56 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/09/16 14:06:50 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*itoa_filler(char *tab, long long value, int base, int flag);
 char	*ft_itoa_base(long long value, int base);
 int		ft_ncounter1(int i, va_list arg, const char *s);
 int		ft_ncounter2(int i, va_list arg, const char *s);
+int		ft_ncounter3(int i, const char *s);
 int		ft_ncounter(int i, va_list arg, const char *s);
 int		b_printf(const char *restrict s, ...);
 
