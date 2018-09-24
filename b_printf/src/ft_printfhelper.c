@@ -6,7 +6,7 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 13:52:14 by amelikia          #+#    #+#             */
-/*   Updated: 2018/09/16 14:05:02 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/09/24 11:44:57 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,9 @@ int	ft_ncounter(int i, va_list arg, const char *s)
 	counter = "";
 	if (s[i] == 's')
 	{
-		counter = (va_arg(arg, char*));
+		counter = (va_arg(arg, char *));
+		if (!counter)
+			counter = "(null)";
 		ft_putstr(counter);
 		n1 += ft_strlen(counter);
 	}

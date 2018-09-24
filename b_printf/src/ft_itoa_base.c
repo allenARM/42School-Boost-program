@@ -6,7 +6,7 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 13:51:53 by amelikia          #+#    #+#             */
-/*   Updated: 2018/09/15 13:51:58 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/09/16 16:07:06 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_itoa_base(long long value, int base)
 	flag = 0;
 	tab = "0123456789abcdef";
 	if (base < 2 || base > 16)
-		ft_putstr("ERROR");
+		return (str = "ERROR");
 	if (value < 0 && base == 10)
 		flag = 1;
 	str = itoa_filler(tab, value, base, flag);
