@@ -18,6 +18,7 @@ void		fl_init(t_flags *flags)
 	flags->flag_l = 0;
 	flags->flag_r = 0;
 	flags->flag_t = 0;
+	flags->flag_g = 0;
 	flags->flag_sc = 0;
 	flags->flag_tc = 0;
 	flags->flag_gc = 0;

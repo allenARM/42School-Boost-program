@@ -24,7 +24,7 @@ t_node	*parse_args(int argc, char **argv, t_flags *flags)
 	path = NULL;
 	while (++i < argc)
 	{
-		if (!read && argv[i][0] == '-')
+		if (read == 0 && argv[i][0] == '-')
 			fl_set(&argv[i][1], flags);
 		if (read || argv[i][0] != '-' || ft_strcmp(argv[i], "-") == 0)
 		{
@@ -33,7 +33,7 @@ t_node	*parse_args(int argc, char **argv, t_flags *flags)
 			path = node_add(path, argv[i], buf);
 		}
 	}
-	if (!read)
+	if (read == 0)
 	{
 		lstat(".", &buf);
 		path = node_add(path, ".", buf);
@@ -53,8 +53,8 @@ int		main(int argc, char **argv)
 	path = path_search_errors(path);
 	path = path_apply_flag(path, &flags);
 	display_symlink(path, &flags);
-	display_files(path, &flags);
 	display_blocks(path, &flags);
+	display_files(path, &flags);
 	display_dirs(path, &flags);
 	ft_list_clean(&path);
 	return (0);

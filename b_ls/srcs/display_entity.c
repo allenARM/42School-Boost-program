@@ -20,7 +20,8 @@ static void			display_detail(t_node *entity, t_flags *flags)
 	printf("%s%c", CWHITE, c);
 	printf("%s", mode_print(entity->buf.st_mode));
 	printf("%3i ", entity->buf.st_nlink);
-	printf("%-6s  ", getpwuid(entity->buf.st_uid)->pw_name);
+	if (flags->flag_g == 0)
+		printf("%-6s  ", getpwuid(entity->buf.st_uid)->pw_name);
 	printf("%-12s", getgrgid(entity->buf.st_gid)->gr_name);
 	printf("%5lld ", entity->buf.st_size);
 	if (flags->flag_tc == 0)

@@ -6,7 +6,7 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 19:41:32 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/09 19:41:33 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/11 10:49:33 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	display_blocks(t_node *path, t_flags *flags)
 	ft_list_clean(&block_list);
 }
 
-
 void	check_for_links(t_node *path, DIR *dir, t_flags *flags)
 {
 	if ((path->buf.st_mode & S_IFLNK) == S_IFLNK && !dir && flags->flag_l == 0)
@@ -50,11 +49,11 @@ void	display_files(t_node *path, t_flags *flags)
 	while (path)
 	{
 		dir = opendir(path->name);
-		if ((path->buf.st_mode & S_IFLNK) != S_IFLNK || ((path->buf.st_mode & \
-		S_IFLNK) == S_IFLNK && path->name[0] == '/' && flags->flag_l == 0) || \
+		if ((path->buf.st_mode & S_IFLNK) != S_IFLNK || ((path->buf.st_mode
+		& S_IFLNK) == S_IFLNK && path->name[0] == '/' && flags->flag_l == 0) ||
 	((path->buf.st_mode & S_IFLNK) == S_IFLNK && flags->flag_l == 0 && !dir))
-			if ((path->buf.st_mode & S_IFDIR) != S_IFDIR && !stat(path->name, \
-						&path->buf))
+			if ((path->buf.st_mode & S_IFDIR) != S_IFDIR &&
+					!stat(path->name, &path->buf))
 				file_list = node_add(file_list, path->name, path->buf);
 		check_for_links(path, dir, flags);
 		if (dir)

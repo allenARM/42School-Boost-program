@@ -32,8 +32,8 @@ char				*check_path_and_link(char *link, char *path)
 char				*getting_full_symlink(char *link, char *path)
 {
 	struct stat		buf;
-	char			*linkname;
 	ssize_t			r;
+	char			*linkname;
 	char			*temp;
 
 	if (ft_str_find(link, "->") == 1)

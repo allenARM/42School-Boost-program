@@ -6,13 +6,13 @@
 /*   By: amelikia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 19:42:42 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/09 19:42:43 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/10 18:41:50 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_ls.h"
 
-void		ft_list_clean(t_node **list)
+void	ft_list_clean(t_node **list)
 {
 	t_node	*link;
 

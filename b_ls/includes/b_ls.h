@@ -15,6 +15,8 @@
 
 # include <pwd.h>
 # include <grp.h>
+# include <string.h>
+# include <errno.h>
 # include <time.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -24,10 +26,13 @@
 # include <sys/types.h>
 # include <uuid/uuid.h>
 
-# define CRED  "\x1B[31m"
-# define CBLUE  "\x1B[34m"
-# define CPINK  "\x1B[35m"
-# define CWHITE  "\x1B[37m"
+# define CRED  "\x1B[0;31m"
+# define CBLUE  "\x1B[0;34m"
+# define CPINK  "\x1B[0;35m"
+# define CWHITE  "\x1B[39m"
+# define BBLUE	"\x1B[46m"
+# define BBLACK "\x1B[40m"
+# define BYELLOW "\x1B[43m"
 
 typedef struct		s_list
 {
@@ -42,6 +47,7 @@ typedef struct		s_flags
 	int				flag_l;
 	int				flag_t;
 	int				flag_r;
+	int				flag_g;
 	int				flag_sc;
 	int				flag_tc;
 	int				flag_gc;

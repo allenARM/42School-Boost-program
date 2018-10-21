@@ -12,6 +12,13 @@
 
 #include "b_ls.h"
 
+void	illegalfn(t_flags *flags, char str)
+{
+	flags->flag_illegal = 1;
+	printf("b_ls: illegal option -- %c\n", str);
+	printf("usage: ./b_ls [GSTaglrt] [file ...]\n");
+}
+
 void	fl_set(char *str, t_flags *flags)
 {
 	while (*str != '\0' && flags->flag_illegal == 0)
@@ -24,6 +31,11 @@ void	fl_set(char *str, t_flags *flags)
 			flags->flag_t = 1;
 		else if (*str == 'r')
 			flags->flag_r = 1;
+		else if (*str == 'g')
+		{
+			flags->flag_g = 1;
+			flags->flag_l = 1;
+		}
 		else if (*str == 'S')
 			flags->flag_sc = 1;
 		else if (*str == 'T')
@@ -31,11 +43,7 @@ void	fl_set(char *str, t_flags *flags)
 		else if (*str == 'G')
 			flags->flag_gc = 1;
 		else
-		{
-			flags->flag_illegal = 1;
-			printf("b_ls: illegal option -- %c\n", *str);
-			printf("usage: ./b_ls [GSTalrt] [file ...]\n");
-		}
+			illegalfn(flags, *str);
 		str++;
 	}
 }
