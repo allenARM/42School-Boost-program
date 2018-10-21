@@ -1,1 +1,1 @@
-# 42School
+# 42School in Boost program
